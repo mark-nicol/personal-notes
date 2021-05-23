@@ -25,7 +25,7 @@ jobs:
       name: Test
     - stage: deploy
       name: Deploy to GitHub Pages
-      if: (NOT type IN (pull_request)) AND (branch = master) # only deploy if merging on master
+      if: (NOT type IN (pull_request)) AND (branch = main) # only deploy if merging on master
       script: pipenv run make html
       deploy:
         provider: pages # deploy on github pages
